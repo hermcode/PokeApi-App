@@ -1,12 +1,19 @@
 import React from 'react'
 import { useFetchCard } from '../hooks/useFetchCard'
+import { StatCard } from './StatCard';
 
 export const PokemonCard = ({pokemon}) => {
 
     const {data} = useFetchCard(pokemon);
 
-    const {id, name, abilities} = data;
-    console.log(abilities);
+    const { id, name, weight, height, ability, description, 
+            stat1, stat2, stat3, stat4, stat5, stat6} = data;
+
+    const height1 = height * 0.1;
+    const hfixed =  height1.toFixed(1)
+
+    const weight1 = weight * 0.2205
+    const wfixed = weight1.toFixed(1)
 
     const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`;
 
@@ -24,37 +31,39 @@ export const PokemonCard = ({pokemon}) => {
 
                     <hr className="pokemon-card-margin"/>
 
-                    <p className="pokemon-card-margin-super">There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.</p>
+                    <p className="pokemon-card-margin-super">{description}</p>
 
 
                     <div className="card-props">
                         <div className="card-props-splitter">
                             <div className="prop">
                                 <p>Height</p>
-                                <h4>2'04"</h4>
+                                <h4>{hfixed} mts</h4>
                             </div>
 
                             <div className="prop">
                                 <p>Weight</p>
-                                <h4>20 lbs</h4>
+                                <h4>{wfixed} lbs</h4>
                             </div>
 
-                            <div className="prop">
-                                <p>Gender</p>
-                                <h4>Binary</h4>
-                            </div>
-                        </div>
-
-                        <div>
                             <div className="prop">
                                 <p>Category</p>
-                                <h4>Seed</h4>
+                                <h4 className="string-prop">Seed</h4>
                             </div>
 
                             <div className="prop">
                                 <p>Abilities</p>
-                                <h4>Overgrow</h4>
+                                <h4 className="string-prop">{ ability }</h4>
                             </div>
+                        </div>
+
+                        <div>
+                            <StatCard stat = {stat1} stat_prop = "Hp"/>
+                            <StatCard stat = {stat2} stat_prop = "Attack"/>
+                            <StatCard stat = {stat3} stat_prop = "Defense"/>
+                            <StatCard stat = {stat4} stat_prop = "Special Attack"/>
+                            <StatCard stat = {stat5} stat_prop = "Special Defense"/>
+                            <StatCard stat = {stat6} stat_prop = "Speed"/>
                         </div>
                     </div>
                 

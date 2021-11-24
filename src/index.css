@@ -3,7 +3,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -18,12 +18,17 @@ code {
     monospace;
 }
 
+/* Global */
+.flex {
+  display: flex;
+}
+
 .nav-header {
   /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0 80px;
+  margin: 20px 0 20px;
 }
 
 .pokeapi-logo {
@@ -113,11 +118,12 @@ input {
   background: radial-gradient(circle, rgb(252, 155, 106) 0%, rgb(253, 87, 87) 100%);
   padding: 30px;
   display: flex;
+  justify-content: space-between;
 }
 
-.card-props-splitter {
+/* .card-props-splitter {
   margin-right: 160px;
-}
+} */
 
 .prop{
   margin-bottom: 10px;
@@ -129,4 +135,39 @@ input {
   font-family: 'Space Mono';
   color: #222222;
   font-size: 22px;
+}
+
+.string-prop {
+  text-transform: capitalize;
+}
+
+/* StatCard */
+.stat-card {
+  padding: 10px 15px;
+  background-color: #00000056;
+  margin-bottom: 10px;
+  border-radius: 7px;
+}
+
+.stat-data {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-data h4{
+  font-family: 'Space Mono';
+  font-size: 20px;
+}
+
+.stat-card p {
+  font-family: 'Open Sans';
+  font-size: 13px;
+  margin-right: 10px;
+}
+.stat-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #3DFFA2;
+  margin-right: 7px;
+  border-radius: 5px;
 }
