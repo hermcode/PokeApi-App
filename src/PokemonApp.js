@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { AddPokemon } from './components/AddPokemon';
-import { PokemonCard } from './components/PokemonCard';
+import { PokemonContainer } from './components/PokemonContainer';
 
 export const PokemonApp = () => {
 
-    const [pokemon, setPokemon] = useState('bulbasaur');
+    const [pokemon, setPokemon] = useState('');
 
     return (
         <div className="container">
@@ -20,10 +20,12 @@ export const PokemonApp = () => {
                 <AddPokemon setPokemon = { setPokemon }/>
             </header>
 
-            <PokemonCard 
+            <PokemonContainer 
                 key = {pokemon}
                 pokemon = {pokemon}
+                setPokemon = { setPokemon }
             />
+            
         </div>
     )
 }

@@ -25,8 +25,8 @@ export const PokemonCard = ({pokemon}) => {
                 <div className="card-info">
 
                     <div className="card-title pokemon-card-margin">
-                        <h1>{name}</h1>
-                        <h2>#{id}</h2>
+                        <h1 className="pokemon-name">{name}</h1>
+                        <h2 className="pokemon-id">#{id}</h2>
                     </div>
 
                     <hr className="pokemon-card-margin"/>

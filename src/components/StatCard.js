@@ -7,8 +7,6 @@ export const StatCard = ({stat, stat_prop}) => {
                 <p>{stat_prop}</p>
                 <h4>{stat}%</h4>
             </div>
-
-            
         </div>
     )
 }
